@@ -1,10 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <title>Laravel App</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
 </head>
 <body>
-    {{ $slot }}
+
+@if (session('status'))
+    <div>{{ session('status') }}</div>
+@endif
+
+{{ $slot }}
+
 </body>
 </html>

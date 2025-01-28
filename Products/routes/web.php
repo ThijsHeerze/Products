@@ -6,6 +6,10 @@ use App\Http\Controllers\CategoryController;
 
 Route::view('/', 'home');
 
+Route::fallback(function () {
+    return view('errors.404');
+});
+
 Route::resource('categories', CategoryController::class);
 
 Route::controller(ProductController::class)
